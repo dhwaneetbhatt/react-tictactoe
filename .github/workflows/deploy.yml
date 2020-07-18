@@ -14,8 +14,10 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 10.x
-    - name: Install
-      run: yarn install
+    - name: Install and Build
+      run: |
+        yarn install
+        yarn run build
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.5.7
       with:
